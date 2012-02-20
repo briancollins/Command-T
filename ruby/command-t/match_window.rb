@@ -103,7 +103,7 @@ module CommandT
       # by some unexpected means of dismissing or leaving the Command-T window
       # (eg. <C-W q>, <C-W k> etc)
       ::VIM::command 'autocmd! * <buffer>'
-      ::VIM::command 'autocmd BufLeave <buffer> ruby $command_t.leave'
+      ::VIM::command 'autocmd BufLeave <buffer> silent! ruby $command_t.leave'
       ::VIM::command 'autocmd BufUnload <buffer> ruby $command_t.unload'
 
       @has_focus  = false
